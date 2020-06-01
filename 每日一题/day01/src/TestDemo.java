@@ -30,14 +30,9 @@ public class TestDemo {
         String A = scanner.nextLine();
         String B = scanner.nextLine();
         int count = 0;
-        StringBuffer sb = new StringBuffer();
-        if(isPalindrome(sb.append(B).append(A).toString())) {
-            count += 1;
-        }
         for (int i = 0; i < A.length(); i++) {
-            sb.delete(0, sb.length());
-            String str = sb.append(A.substring(0, i + 1)).append(B).append(A.substring(i + 1)).toString();
-            if(isPalindrome(str)) {
+            StringBuffer sb = new StringBuffer(A); // 将 sb 初始化为 A
+            if(isPalindrome(sb.insert(i, B).toString())) {
                 count++;
             }
         }
