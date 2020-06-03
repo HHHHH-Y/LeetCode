@@ -30,15 +30,6 @@ public class TestDemo {
             usedSize++;
         }
         int maxlen = strings[0].length();
-       /* String str1 = "";
-        for (int i = 1; i < usedSize; i++) {
-            if(strings[i].length() > maxlen) {
-                maxlen = strings[i].length();
-                str1 = strings[i];
-            }
-        }
-        System.out.println(str1);*/
-
         for (int i = 1; i < usedSize; i++) {
             if(strings[i].length() > maxlen) {
                 maxlen = strings[i].length();
@@ -50,6 +41,18 @@ public class TestDemo {
                 return;
             }
         }
+
+       /* int maxlen = 0;
+        String str1 = "";
+        for (int i = 0; i < usedSize; i++) {
+            if(strings[i].length() > maxlen) {
+                maxlen = strings[i].length();
+                str1 = strings[i];
+            }
+        }
+        System.out.println(str1);*/
+
+
         // 在 Java中, 使用 Integer.parseInt() 方法可以将String类型直接转换成int类型
        /* int[] array = new int[usedSize];
         for (int i = 0; i < usedSize; i++) {
