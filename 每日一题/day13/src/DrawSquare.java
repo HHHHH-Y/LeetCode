@@ -23,7 +23,7 @@ import java.util.Scanner;
  * Date: 2020-06-14
  */
 public class DrawSquare {
-    private static void draw(int n, char c) {
+    /*private static void draw(int n, char c) {
         char[] chars = new char[n];
         for (int i = 0; i < n; i++) {
             chars[i] = c;
@@ -45,6 +45,23 @@ public class DrawSquare {
         }
         for (char ch:chars) {
             System.out.print(ch);
+        }
+    }*/
+    private static void draw(int n, char c) {
+        long row = Math.round(n * 0.5);
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < n; j++) {
+                if(i == 0 || i == row - 1) {
+                    System.out.print(c);
+                } else {
+                    if(j == 0 || j == n - 1) {
+                        System.out.print(c);
+                    } else {
+                        System.out.print(" ");
+                    }
+                }
+            }
+            System.out.println();
         }
     }
     public static void main(String[] args) {

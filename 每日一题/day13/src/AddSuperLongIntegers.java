@@ -21,6 +21,7 @@ import java.util.Scanner;
  * 输出相加后的结果，string型
  *
  * 思路：字符串中的数值进行相加，就是用逢 10 进 1 的方法进行计算。
+ *       在可以使用 BigInteger 的情况下可以直接使用 BigInteger 进行计算
  * User: HHH.Y
  * Date: 2020-06-14
  */
