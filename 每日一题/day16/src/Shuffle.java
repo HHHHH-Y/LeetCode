@@ -20,22 +20,60 @@ import java.util.Scanner;
  *
  * 输出描述:
  * 对于每组数据，输出一行，最终的序列。数字之间用空格隔开，不要在行末输出多余的空格。
+ *
+ * 思路：
+ * 排序前     1  2  3  4  5  6
+ *           0  1  2  3  4  5
+ *
+ * 排序后     1  4  2  5  3  6
+ *           0  1  2  3  4  5
+ *
+ * 由此可见：
+ * 当下标小于 n 时，洗牌后下标的变化：
+ *          洗牌前0 洗牌后0
+ *          洗牌前1 洗牌后2    相当于：2*下标
+ *          洗牌前2 洗牌后4
+ *  当下标大于 n 时，洗牌后下标的变化：
+ *          洗牌前3 洗牌后1
+ *          洗牌前4 洗牌后3    相当于：2*（下标-1）+ 1
+ *          洗牌前5 洗牌后5
  * User: HHH.Y
  * Date: 2020-06-18
  */
 public class Shuffle {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            int m = scanner.nextInt(); //m 表示数据数组
-            while (m != 0) {
+        while(scanner.hasNext()){
+            int m = scanner.nextInt(); // m 表示数据组数
+            while(m!=0){
                 int n = scanner.nextInt();
-                int k = scanner.nextInt(); // k 表示洗牌的次数
-                int[] arr = new int[2 * n]; // 用于存放输入的牌
-                // 计算下标
-
+                int k = scanner.nextInt(); // k 表示洗牌次数
+                int [] arr = new int[2*n]; // arr 用于存放输入的牌
+                //计算下标，将下标确定好之后再进行输入
+                for(int i = 0; i < 2*n;i++){
+                    int temp = i;
+                    for(int j = 0; j < k ;j++){
+                        // 进行 k 次洗牌
+                        if(temp < n){
+                            temp = 2*temp;
+                        }else{
+                            temp = 2*(temp-n) + 1;
+                        }
+                    }
+                    //temp为元素经历k次洗牌之后的下标
+                    arr[temp] = scanner.nextInt();
+                }
+                //输出
+                for(int i = 0;i < 2*n;i++){
+                    if(i == 2*n-1){
+                        System.out.print(arr[i]);
+                    }else {
+                        System.out.print(arr[i]+" ");
+                    }
+                }
+                System.out.println();
+                m--;
             }
         }
     }
-
 }
