@@ -24,7 +24,7 @@ public class Balance {
         }
         int left = maxDepth(root.left); // 递归左子树的高度
         int right = maxDepth(root.right); // 递归右子树的高度
-        return Math.max(left, right) + 1; // 每次求出左右子树的最大高度 + 1 就是父节点的高度
+        return Math.max(left, right) + 1; // 每次求出左右子树的最大高度 + 1 就是这棵树的高度
     }
     public boolean isBalance (TreeNode root) {
         if(root == null) {
