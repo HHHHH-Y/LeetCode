@@ -28,10 +28,14 @@ public class Counting_Statistics {
                 invalidVote++;
             }
         }
-        for (Map.Entry<String, Integer> entry :resMap.entrySet()) {
-            System.out.println(entry.getKey() + ":" + entry.getValue());
+        for (int i = 0; i < canName.length; i++) {
+            if(resMap.get(canName[i]) == null) {
+                System.out.println(canName[i] + " : " + "0");
+            } else {
+                System.out.println(canName[i] + " : " + resMap.get(canName[i]));
+            }
         }
-        System.out.println("Invalid: " + invalidVote);
+        System.out.println("Invalid : " + invalidVote);
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
