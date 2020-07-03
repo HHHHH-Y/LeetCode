@@ -24,7 +24,7 @@ public class LuckyDraw {
     }
 
     // 总共会抽取的次数 (num!)
-    private static int totalCount(int n) {
+    private static float totalCount(int n) {
         if(n == 0) {
             return 1;
         }
