@@ -21,13 +21,16 @@ public class DateTranslateDay {
             int year = scanner.nextInt();
             int month = scanner.nextInt();
             int day = scanner.nextInt();
-            outDay(year, month, day);
+            System.out.println(outDay(year, month, day));
         }
     }
 
-    private static void outDay(int year, int month, int day) {
+    private static int outDay(int year, int month, int day) {
         // 将十二个月的天数放进一个数组中, 默认二月为 28 天
         int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if(year <= 0 || month <= 0 || month > 12 || day > days[month - 1]) {
+            return -1;
+        }
         // 如果该年为闰年, 则二月为 29 天
         if(year % 4 == 0 && year % 100 != 0) {
             days[1] = 29;
@@ -37,6 +40,6 @@ public class DateTranslateDay {
             sum += days[i];
         }
         sum = sum + day;
-        System.out.println(sum);
+        return sum;
     }
 }
