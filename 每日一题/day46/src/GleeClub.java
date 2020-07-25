@@ -13,6 +13,8 @@ import java.util.Scanner;
  *
  * 输出描述:
  * 输出一行表示最大的乘积
+ *
+ * 使用 动态规划 求解
  * User: HHH.Y
  * Date: 2020-07-24
  */
