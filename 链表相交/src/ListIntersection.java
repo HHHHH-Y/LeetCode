@@ -15,7 +15,8 @@
  *
  * 注意:
  * 1. 一起走的时候一定要判断 curL 是否为 null, curS 是否为 null
- * 2. 当 curL == curS 的时候, 还需要判断他们是否为 null, 如果不为 null, 才说明他们指向了相交的节点, 否则, 就应该返回 null
+ * 2. 当 curL == curS 的时候, 还需要判断他们是否为 null, 如果不为 null, 才说明他们指向了相交的节点
+ *    如果 curL = curS && curL == null 的时候, 说明最少有一个链表已经遍历完了, 则两个单链表不想交, 返回结果为 null
  * User: HHH.Y
  * Date: 2020-07-28
  */
