@@ -19,6 +19,7 @@ public class MergeSort {
         mergeSortInternal(array, 0, array.length - 1);
     }
 
+    // 使用递归进行快速排序
     private static void mergeSortInternal(int[] array, int left, int right) {
         if(left >= right) {
             return;
