@@ -34,6 +34,7 @@ public class MergeSort {
         merge(array, left, mid, right);
     }
 
+    // 分开的链表进行合并
     private static void merge(int[] array, int left, int mid, int right) {
         int s1 = left;
         int s2 = mid + 1;
