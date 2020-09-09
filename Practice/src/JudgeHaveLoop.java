@@ -4,10 +4,10 @@
  * User: HHH.Y
  * Date: 2020-09-01
  */
-class ListNode {
+class Node {
     int val;
     Node next;
-    public ListNode(int x) {
+    public Node(int x) {
         this.val = x;
         this.next = null;
     }
