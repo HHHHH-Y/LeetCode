@@ -6,17 +6,17 @@
  */
 class ListNode {
     int val;
-    ListNode next;
+    Node next;
     public ListNode(int x) {
         this.val = x;
         this.next = null;
     }
 }
 public class JudgeHaveLoop {
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(Node head) {
         // 定义两个引用, 一个走一步, 一个走两步
-        ListNode fast = head;
-        ListNode slow = head;
+        Node fast = head;
+        Node slow = head;
         // 如果链表中出现 null, 则说明链表无环
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
