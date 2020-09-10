@@ -9,18 +9,21 @@ public class DeleteNode {
         if(head == null) {
             return null;
         }
-        Node node = new Node(-1);
-        node.next = head;
-        Node prev = node;
-        Node cur = head;
-        while (cur != null) {
-            if(cur.val == val) {
+        // 如果要删除的节点是头节点, 则直接将 head 往后移动
+        if(head.val == val) {
+            head = head.next;
+            return head;
+        }
+        Node prev = head;
+        while (prev.next != null) {
+            if(prev.next.val == val) {
+                Node cur = prev.next;
                 prev.next = cur.next;
+                return head;
             } else {
-                prev = cur;
-                cur = cur.next;
+                prev = prev.next;
             }
         }
-        return node.next;
+        return head;
     }
 }
