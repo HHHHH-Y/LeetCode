@@ -5,7 +5,7 @@
  * Date: 2020-09-09
  */
 public class DeleteNode {
-    public Node removeElements(Node head, int val) {
+    public LNode removeElements(LNode head, int val) {
         if(head == null) {
             return null;
         }
@@ -14,10 +14,10 @@ public class DeleteNode {
             head = head.next;
             return head;
         }
-        Node prev = head;
+        LNode prev = head;
         while (prev.next != null) {
             if(prev.next.val == val) {
-                Node cur = prev.next;
+                LNode cur = prev.next;
                 prev.next = cur.next;
                 return head;
             } else {

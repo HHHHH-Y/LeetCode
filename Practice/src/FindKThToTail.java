@@ -6,12 +6,12 @@
  * Date: 2020-09-09
  */
 public class FindKThToTail {
-    public Node FindKthToTail(Node head,int k) {
+    public LNode FindKthToTail(LNode head, int k) {
         if(head == null) {
             return null;
         }
-        Node cur = head;
-        Node curNext = cur;
+        LNode cur = head;
+        LNode curNext = cur;
         for (int i = 0; i < k - 1; i++) {
             curNext = curNext.next;
         }

@@ -5,12 +5,12 @@
  * Date: 2020-09-09
  */
 public class MiddleNode {
-    public Node middleNode(Node head) {
+    public LNode middleNode(LNode head) {
         if(head == null) {
             return null;
         }
-        Node fast = head;
-        Node slow = head;
+        LNode fast = head;
+        LNode slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;

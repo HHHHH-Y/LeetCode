@@ -5,14 +5,14 @@
  * Date: 2020-09-10
  */
 public class FindCommonNode {
-    public Node getIntersectionNode(Node headA, Node headB) {
+    public LNode getIntersectionNode(LNode headA, LNode headB) {
         if(headA == null || headB == null) {
             return null;
         }
-        Node curL = headA;
-        Node curS = headB;
+        LNode curL = headA;
+        LNode curS = headB;
         int lenA = 0;
-        Node cur = headA;
+        LNode cur = headA;
         while (cur != null) {
             lenA++;
             cur = cur.next;
